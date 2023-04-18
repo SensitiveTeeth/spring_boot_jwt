@@ -1,0 +1,1 @@
+jwt expired time is 3600 seconds(1 hour)

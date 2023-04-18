@@ -9,6 +9,14 @@ public class PublicContent {
     private Long id;
     private String content;
 
+    public PublicContent(Long id, String content) {
+        this.id = id;
+        this.content = content;
+    }
+
+    public PublicContent() {
+    }
+
     public Long getId() {
         return id;
     }
