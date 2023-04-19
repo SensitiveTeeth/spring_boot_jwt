@@ -36,14 +36,14 @@ public class UserResource {
     }
 
     @PostMapping("/auth/login")
-    public String login(HttpServletRequest request) throws Exception {
+    public String login(@RequestBody User requestUser) throws Exception {
         try {
-            String username = request.getParameter("username").toString();
+            String username = requestUser.getUsername();
             Optional<User> user = this.userRepository.findByUsername(username);
             if (user.isEmpty()) {
                 throw new Exception("User Not found");
             } else {
-                String password = request.getParameter("password").toString();
+                String password = requestUser.getPassword();
                 User actualUser = user.get();
                 String userPassword = actualUser.getPassword();
                 PasswordEncoder passwordEncoder =
