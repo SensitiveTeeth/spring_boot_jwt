@@ -66,7 +66,6 @@ public class UserResource {
             PasswordEncoder passwordEncoder =
                     PasswordEncoderFactories.createDelegatingPasswordEncoder();
 
-
             String encryptedPassword = passwordEncoder.encode(user.getPassword());
             user.setPassword(encryptedPassword);
             this.userRepository.save(user);
